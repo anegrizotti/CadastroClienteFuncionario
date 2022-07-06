@@ -9,7 +9,7 @@ package com.mycompany.atv.trabeng;
  *
  * @author Ane Luisy
  */
-public class TrabEng {
+public class Main {
 
     public static void main(String[] args) {
         System.out.println("Hello World!");
