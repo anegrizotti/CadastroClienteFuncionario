@@ -10,9 +10,8 @@ O projeto em questão é uma aplicação desenvolvida como avaliação da discip
 <div> ✔️ Visualiza os Clientes <div>
 
 ### Como rodar a aplicação ▶️
-1⃣ No terminal, clone o projeto:
-git clone https://github.com/team-code-warriors/locadora-de-veiculos.git
-2⃣ Após, abra o projeto com a NetBeans IDE e execute o projeto.
+<div> 1⃣ No terminal, clone o projeto: git clone https://github.com/anegrizotti/CadastroClienteFuncionario.git <div>
+<div> 2⃣ Após, abra o projeto com a NetBeans IDE e execute o projeto. <div>
 
 ### Como testar a aplicação 
 1⃣
