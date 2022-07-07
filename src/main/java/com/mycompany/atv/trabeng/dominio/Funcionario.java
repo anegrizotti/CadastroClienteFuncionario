@@ -26,5 +26,6 @@ public class Funcionario {
         System.out.println("Email: "+this.email);
         System.out.println("Telefone: "+this.telefone);
         System.out.println("Salário: "+this.salario);
+        System.out.println("");
     }
 }

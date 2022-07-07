@@ -23,5 +23,6 @@ public class Cliente {
         System.out.println("CPF: "+this.cpf);
         System.out.println("Email: "+this.email);
         System.out.println("Telefone: "+this.telefone);
+        System.out.println("");
     }
 }

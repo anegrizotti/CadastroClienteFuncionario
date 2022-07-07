@@ -3,9 +3,9 @@ package com.mycompany.atv.trabeng.apresentação;
 import com.mycompany.atv.trabeng.dominio.Cliente;
 import javax.swing.JOptionPane;
 
-public class TelaCadastroCliente extends javax.swing.JPanel {
-
-    public TelaCadastroCliente() {
+public class CadastroCliente extends javax.swing.JFrame {
+    
+    public CadastroCliente() {
         initComponents();
     }
     
@@ -17,13 +17,15 @@ public class TelaCadastroCliente extends javax.swing.JPanel {
         tfTelefone = new javax.swing.JTextField();
         tfEmail = new javax.swing.JTextField();
         btnCadastrar = new javax.swing.JButton();
-        btnCancelar = new javax.swing.JButton();
+        btnVoltar = new javax.swing.JButton();
         labelTitulo = new javax.swing.JLabel();
         labelNome = new javax.swing.JLabel();
         labelCPF = new javax.swing.JLabel();
         labelEmail = new javax.swing.JLabel();
         labelTelefone = new javax.swing.JLabel();
         tfCPF = new javax.swing.JTextField();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         tfNome.setToolTipText("");
 
@@ -38,10 +40,10 @@ public class TelaCadastroCliente extends javax.swing.JPanel {
             }
         });
 
-        btnCancelar.setText("Cancelar");
-        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
+        btnVoltar.setText("Voltar");
+        btnVoltar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCancelarActionPerformed(evt);
+                btnVoltarActionPerformed(evt);
             }
         });
 
@@ -58,8 +60,8 @@ public class TelaCadastroCliente extends javax.swing.JPanel {
 
         tfCPF.setToolTipText("");
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
@@ -76,14 +78,14 @@ public class TelaCadastroCliente extends javax.swing.JPanel {
                     .addComponent(tfTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tfNome, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tfEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(11, Short.MAX_VALUE))
+                .addContainerGap(14, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(btnCadastrar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(88, 88, 88))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(labelTitulo)
@@ -110,48 +112,54 @@ public class TelaCadastroCliente extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelTelefone)
                     .addComponent(tfTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(20, 20, 20))
+                    .addComponent(btnVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(19, 19, 19))
         );
+
+        pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
         String nome = "", cpf = "", email = "", telefone = "";
-        
+
         if(!tfNome.getText().equals("") &&
             !tfCPF.getText().equals("") &&
             !tfEmail.getText().equals("") &&
             !tfTelefone.getText().equals("")) {
-            
+
             nome = tfNome.getText();
             cpf = tfCPF.getText();
             email = tfEmail.getText();
             telefone = tfTelefone.getText();
-            
+
             Cliente cliente = new Cliente(nome, cpf, email, telefone);
             TelaPrincipal.lista_clientes.add(cliente);
-            
+
             tfNome.setText("");
             tfCPF.setText("");
             tfEmail.setText("");
             tfTelefone.setText("");
-            
+
         } else {
             JOptionPane.showMessageDialog(null, "Você deve preencher todos os campos.", "ERRO", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnCadastrarActionPerformed
 
-    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
+    private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
         this.dispose();
-    }//GEN-LAST:event_btnCancelarActionPerformed
+        TelaPrincipal tela = new TelaPrincipal();
+        tela.setLocationRelativeTo(null);
+        tela.setVisible(true);
+    }//GEN-LAST:event_btnVoltarActionPerformed
+
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCadastrar;
-    private javax.swing.JButton btnCancelar;
+    private javax.swing.JButton btnVoltar;
     private javax.swing.JLabel labelCPF;
     private javax.swing.JLabel labelEmail;
     private javax.swing.JLabel labelNome;
