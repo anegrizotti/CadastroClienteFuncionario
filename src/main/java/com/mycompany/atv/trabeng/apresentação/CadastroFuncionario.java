@@ -138,11 +138,11 @@ public class CadastroFuncionario extends javax.swing.JFrame {
         String nome = "", cpf = "", email = "", telefone = "";
         double salario = 0;
 
-        if(!tfNome.getText().equals("") &&
-            !tfCPF.getText().equals("") &&
-            !tfEmail.getText().equals("") &&
-            !tfTelefone.getText().equals("") &&
-            !tfSalario.getText().equals(""))        {
+        if (!tfNome.getText().equals("")
+                && !tfCPF.getText().equals("")
+                && !tfEmail.getText().equals("")
+                && !tfTelefone.getText().equals("")
+                && !tfSalario.getText().equals("")) {
 
             nome = tfNome.getText();
             cpf = tfCPF.getText();
@@ -151,7 +151,7 @@ public class CadastroFuncionario extends javax.swing.JFrame {
             salario = Double.parseDouble(tfSalario.getText());
 
             Funcionario funcionario = new Funcionario(nome, cpf, email, telefone, salario);
-            TelaPrincipal.lista_funcionarios.add(funcionario);
+            TelaPrincipal.gerenciadorFuncionario.InserirFuncionario(funcionario);
 
             tfNome.setText("");
             tfCPF.setText("");

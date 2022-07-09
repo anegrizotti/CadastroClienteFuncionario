@@ -1,15 +1,14 @@
 package com.mycompany.atv.trabeng.apresentação;
 
-import com.mycompany.atv.trabeng.dominio.Cliente;
-import com.mycompany.atv.trabeng.dominio.Funcionario;
-import java.util.ArrayList;
+import com.mycompany.atv.trabeng.dominio.GerenciadorCliente;
+import com.mycompany.atv.trabeng.dominio.GerenciadorFuncionario;
 import javax.swing.JOptionPane;
 
 public class TelaPrincipal extends javax.swing.JFrame {
 
-   public static ArrayList<Cliente> lista_clientes = new ArrayList<Cliente>();
-   public static ArrayList<Funcionario> lista_funcionarios = new ArrayList<Funcionario>();
-    
+    public static GerenciadorCliente gerenciadorCliente = new GerenciadorCliente();
+    public static GerenciadorFuncionario gerenciadorFuncionario = new GerenciadorFuncionario();
+
     public TelaPrincipal() {
         initComponents();
     }
@@ -147,13 +146,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCadastrarFuncionarioActionPerformed
 
     private void btnVisualizarFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVisualizarFuncionarioActionPerformed
-        if (!lista_funcionarios.isEmpty()) {
-            for (int i=0; i<lista_funcionarios.size(); i++) {
-                lista_funcionarios.get(i).imprimir();
+        if (!gerenciadorFuncionario.ListarFuncionarios().isEmpty()) {
+            for (int i = 0; i < gerenciadorFuncionario.ListarFuncionarios().size(); i++) {
+                gerenciadorFuncionario.ListarFuncionarios().get(i).imprimir();
             }
         } else {
             JOptionPane.showMessageDialog(null, "Não há nenhum funcionário cadastrado.", "ERRO", JOptionPane.ERROR_MESSAGE);
-        } 
+        }
     }//GEN-LAST:event_btnVisualizarFuncionarioActionPerformed
 
     private void btnCadastrarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarClienteActionPerformed
@@ -164,13 +163,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCadastrarClienteActionPerformed
 
     private void btnVisualizarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVisualizarClienteActionPerformed
-        if (!lista_clientes.isEmpty()) {
-            for (int i=0; i<lista_clientes.size(); i++) {
-                lista_clientes.get(i).imprimir();
+        if (!gerenciadorCliente.ListarClientes().isEmpty()) {
+            for (int i = 0; i < gerenciadorCliente.ListarClientes().size(); i++) {
+                gerenciadorCliente.ListarClientes().get(i).imprimir();
             }
         } else {
             JOptionPane.showMessageDialog(null, "Não há nenhum cliente cadastrado.", "ERRO", JOptionPane.ERROR_MESSAGE);
-        } 
+        }
     }//GEN-LAST:event_btnVisualizarClienteActionPerformed
 
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed

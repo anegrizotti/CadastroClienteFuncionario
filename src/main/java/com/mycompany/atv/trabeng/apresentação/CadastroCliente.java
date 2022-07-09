@@ -136,7 +136,7 @@ public class CadastroCliente extends javax.swing.JFrame {
             telefone = tfTelefone.getText();
 
             Cliente cliente = new Cliente(nome, cpf, email, telefone);
-            TelaPrincipal.lista_clientes.add(cliente);
+            TelaPrincipal.gerenciadorCliente.InserirCliente(cliente);
 
             tfNome.setText("");
             tfCPF.setText("");
