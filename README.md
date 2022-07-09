@@ -14,7 +14,7 @@ O projeto em questão é uma aplicação desenvolvida como avaliação da discip
 <div> 2⃣ Após, abra o projeto com a NetBeans IDE e execute o arquivo "Main", clicando com o botão direito sob ele e indo em "Run File". <div>
 
 ### Como testar a aplicação 
-<div> 2⃣ Abra o projeto com a NetBeans IDE e execute o arquivo "TodosTestes", encontrado em TestPackages, clicando com o botão direito sob ele e indo em "Test File". <div>
+<div> 1⃣ Abra o projeto com a NetBeans IDE e execute o arquivo "TodosTestes", encontrado em TestPackages, clicando com o botão direito sob ele e indo em "Test File". <div>
 
 ### Desenvolvedores/Contribuintes
 <div> :octocat: Ane Luisy Grizotti <div>
