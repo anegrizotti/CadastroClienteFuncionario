@@ -1,7 +1,7 @@
 <h1 align="center"> Cadastro de Cliente e Funcionário </h1>
 
 ### Descrição do projeto
-O projeto em questão é uma aplicação desenvolvida como avaliação da disciplina Engenharia de Software, ministrada pelo Professor Dr. Alexandre Perin. Trata-se de um projeto simples, que realiza cadastro de Funcionários e Clientes, apenas. O intuito principal do projeto é praticar o uso do JUnit do Java.
+O projeto em questão é uma aplicação desenvolvida como avaliação da disciplina Engenharia de Software, ministrada pelo Professor Dr. Alexandre Perin. Trata-se de uma aplicação simples, que realiza cadastro de Funcionários e Clientes, apenas. O intuito principal do projeto é praticar o uso do JUnit do Java.
 
 ### Funcionalidades
 <div> ✔️ Gerencia os Funcionários <div>
